@@ -1,21 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تمبرهای احساسی</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f7f4ee">
+  <meta name="description" content="دفتر شخصی ثبت تمبرهای احساسی؛ برای مشاهده، شناخت و مرور الگوهای احساسات روزمره.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="تمبر احساس">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>تمبرهای احساس | دفتر خودشناسی</title>
 </head>
-<body style="text-align:center; font-family:Tahoma; padding:40px;">
+<body>
+ <div class="app-shell">
+  <header class="topbar">
+   <div class="brand"><span class="brand-mark" aria-hidden="true">✺</span><div><strong>تمبرهای احساس</strong><small>دفتر شخصی خودشناسی</small></div></div>
+   <div class="header-actions"><span class="date-pill" id="persianDate" aria-label="تاریخ شمسی">—</span><button class="icon-btn" id="aboutBtn" title="درباره برنامه" aria-label="درباره برنامه">ⓘ</button></div>
+  </header>
 
-    <h1>🎭 دفتر تمبرهای احساسی</h1>
+  <main>
+   <section class="hero" aria-labelledby="heroTitle">
+    <div class="hero-copy"><span class="eyebrow"><span class="live-dot"></span> فضایی برای مشاهده، بدون قضاوت</span><h1 id="heroTitle">به احساساتت<br><em>فرصت دیده‌شدن بده.</em></h1><p>هر بار که احساسی را تجربه می‌کنی، یک تمبر در ظرف آن بگذار. روند انباشته‌شدن احساساتت را ببین و هنگام تخلیه، اتفاق رخ‌داده را ثبت کن.</p><div class="hero-actions"><button class="primary-btn" id="installBtn"><span aria-hidden="true">↧</span> افزودن به صفحه گوشی</button><button class="secondary-btn" id="historyJump">مشاهده تاریخچه <span aria-hidden="true">↙</span></button></div></div>
+    <div class="hero-art" aria-hidden="true"><div class="art-halo halo-one"></div><div class="art-halo halo-two"></div><div class="art-jar"><div class="art-water"></div><div class="art-spark one">✳</div><div class="art-spark two">✦</div><div class="art-spark three">✳</div></div><span class="art-note">احساس‌ها می‌آیند و می‌روند…</span></div>
+   </section>
 
-    <p>نرم‌افزار ثبت و مدیریت تمبرهای احساسی</p>
+   <section class="overview" aria-label="نمای کلی"><div class="overview-item"><span>تمبرهای ثبت‌شده در ظرف‌ها</span><strong id="totalCount">۰</strong></div><div class="overview-item"><span>ظرف‌های دارای تمبر</span><strong id="activeCount">۰ <small>از ۷</small></strong></div><div class="overview-item"><span>تخلیه‌های ثبت‌شده</span><strong id="clearCount">۰</strong></div><div class="overview-hint">هر ظرف تا <b>۱۰۰ تمبر</b> ظرفیت دارد.</div></section>
 
-    <h2>✅ برنامه با موفقیت اجرا شد!</h2>
+   <section class="vessels-section" aria-labelledby="vesselsTitle"><div class="section-heading"><div><span class="section-kicker">گام اول • مشاهده</span><h2 id="vesselsTitle">ظرف‌های احساس من</h2><p>برای ثبت هر تجربه، روی «افزودن تمبر» بزن.</p></div><span class="section-symbol" aria-hidden="true">✿</span></div><div id="vesselsGrid" class="vessels-grid"></div></section>
 
-    <button onclick="alert('سلام! برنامه آماده است.')">
-        آزمایش برنامه
-    </button>
-
+   <section class="history-section" id="historySection" aria-labelledby="historyTitle"><div class="section-heading history-heading"><div><span class="section-kicker">گام دوم • بازنگری</span><h2 id="historyTitle">ردپای احساسات</h2><p>تاریخچه ثبت تمبرها و رویدادهای تخلیه را اینجا ببین.</p></div><button class="text-btn" id="backupBtn">دریافت نسخه پشتیبان ↥</button></div><div class="history-tools"><label class="filter-wrap">نمایش <select id="historyFilter" aria-label="فیلتر تاریخچه"><option value="all">همه رویدادها</option><option value="add">ثبت تمبر</option><option value="clear">تخلیه ظرف</option></select></label><button id="restoreBtn" class="subtle-btn">بازیابی از فایل</button><input id="restoreInput" type="file" accept=".json,application/json" hidden></div><div id="historyList" class="history-list" aria-live="polite"></div><button class="show-more" id="moreHistoryBtn" hidden>نمایش رویدادهای بیشتر</button></section>
+  </main>
+  <footer><div class="footer-flower">✺</div><p>هر احساس، پیامی برای شناخت بهتر خودمان است.</p><small>این ابزار برای خودآگاهی طراحی شده و جایگزین مشاوره یا درمان تخصصی نیست.</small><button id="footerAboutBtn">درباره برنامه و سازنده</button></footer>
+ </div>
+ <dialog id="clearDialog" class="app-dialog"><form id="clearForm"><button type="button" class="dialog-close" data-close aria-label="بستن">×</button><span class="modal-eyebrow">ثبت یک رویداد</span><h2 id="clearTitle">تخلیه ظرف</h2><p id="clearSummary"></p><label for="clearReason">چه اتفاقی افتاد؟ <span class="required">(ضروری)</span></label><textarea id="clearReason" required maxlength="1200" rows="4" placeholder="مثلاً: بعد از بحث، خشمم را به‌صورت شدیدی بروز دادم…"></textarea><p class="field-help">یادداشت فقط روی همین دستگاه ذخیره می‌شود.</p><div class="dialog-actions"><button type="button" class="secondary-btn" data-close>انصراف</button><button type="submit" class="primary-btn danger-btn">ثبت رویداد و خالی‌کردن</button></div></form></dialog>
+ <dialog id="infoDialog" class="app-dialog info-dialog"><div class="info-content"><button type="button" class="dialog-close" data-close aria-label="بستن">×</button><div class="info-icon">✺</div><span class="modal-eyebrow">درباره این دفتر</span><h2>تمبرهای احساس</h2><p>ابزاری ساده برای ثبت و مشاهده احساسات روزمره و شناسایی الگوهای انباشته‌شدن آن‌ها؛ با امکان ثبت اتفاقی که هنگام تخلیه ظرف رخ داده است.</p><div class="author-box"><span>طراحی و ایده</span><strong>کاری از دکتر کاظمی نژاد</strong><a href="mailto:kazem.mi.au@gmail.com">kazem.mi.au@gmail.com</a></div><p class="privacy-text">🔒 اطلاعات فقط در حافظه مرورگر همین دستگاه نگهداری می‌شوند و به سرور ارسال نمی‌شوند. حذف داده‌های مرورگر یا تغییر دستگاه ممکن است آن‌ها را پاک کند؛ از بخش تاریخچه نسخه پشتیبان بگیرید.</p><button type="button" class="primary-btn full-width" data-close>متوجه شدم</button></div></dialog>
+ <dialog id="installDialog" class="app-dialog info-dialog"><div class="info-content"><button type="button" class="dialog-close" data-close aria-label="بستن">×</button><div class="info-icon">↧</div><span class="modal-eyebrow">نصب برنامه</span><h2>همیشه دم دستت باشد</h2><div id="installInstructions"></div><button type="button" class="primary-btn full-width" data-close>متوجه شدم</button></div></dialog>
+ <div id="toast" class="toast" role="status" aria-live="polite"></div>
+ <script src="./app.js" defer></script>
 </body>
 </html>
