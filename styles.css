@@ -16,3 +16,14 @@
   .jar:after { height: 43px; }
   .jar-shadow { width: 88px; bottom: 2px; }
 }
+
+/* Per-vessel history control and optional stamp notes */
+.card-actions{grid-template-columns:minmax(0,1fr) 36px 36px;gap:6px}
+.vessel-history-btn{border:1px solid #e5eae6;background:#f7faf8;color:#4e8676;border-radius:11px;font-size:19px;min-height:40px;display:grid;place-items:center}
+.vessel-history-btn:hover{background:#edf5ef}
+.optional{color:#85948b;font-weight:400}
+.vessel-history-dialog{width:min(94vw,590px)}
+.vessel-history-list{max-height:min(56vh,520px);overflow-y:auto;margin-top:16px;border-top:1px solid #eef0eb}
+.vessel-history-list .history-row{align-items:flex-start}
+@media(max-width:730px){.card-actions{grid-template-columns:minmax(0,1fr) 31px 31px;gap:4px}.vessel-history-btn{font-size:16px;min-height:38px}.clear-btn{font-size:18px;min-height:38px}.stamp-btn{font-size:11px;min-height:38px}}
+@media(max-width:380px){.card-actions{grid-template-columns:minmax(0,1fr) 29px 29px;gap:3px}.stamp-btn{font-size:9px}.vessel-history-btn{font-size:15px}}
