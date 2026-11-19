@@ -7,3 +7,12 @@
 .quick-actions .primary-btn,.quick-actions .secondary-btn{min-height:43px}
 .inspiration-credit{margin:4px 0!important;color:#577d70!important;font-size:12px!important;line-height:2!important}
 @media(max-width:730px){.quick-actions{padding:17px 0 12px;gap:8px}.quick-actions .primary-btn,.quick-actions .secondary-btn{font-size:11px;padding-inline:14px}}
+
+/* Mobile only: more compact emotion jars; desktop layout is unchanged. */
+@media (max-width: 730px) {
+  .vessel-card { min-height: 264px; }
+  .jar-wrap { height: 126px; }
+  .jar { width: 70px; height: 106px; border-width: 4px; border-top-width: 7px; border-radius: 12px 12px 23px 23px; }
+  .jar:after { height: 43px; }
+  .jar-shadow { width: 88px; bottom: 2px; }
+}
